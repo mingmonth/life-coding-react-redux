@@ -1,7 +1,7 @@
 import { createStore } from "redux";
 export default createStore(function (state, action) {
   if (state === undefined) {
-    return { number: 0 };
+    return { number: 0, unit: "kg" };
   }
   if (action.type === "INCREMENT") {
     return { ...state, number: state.number + action.size };

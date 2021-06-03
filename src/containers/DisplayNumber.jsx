@@ -1,4 +1,21 @@
 import DisplayNumber from '../components/DisplayNumber';
+import { connect } from 'react-redux';
+
+function mapReduxStateToReactProps(state) {
+  return {
+    number: state.number,
+    unit: state.unit,
+  };
+}
+
+// function mapReduxDispatchToReactProps() {
+//   return {};
+// }
+
+export default connect(mapReduxStateToReactProps, null)(DisplayNumber);
+
+/*
+import DisplayNumber from '../components/DisplayNumber';
 import React, { Component } from 'react';
 import store from '../store';
 
@@ -15,3 +32,4 @@ export default class extends Component {
     return <DisplayNumber number={this.state.number}></DisplayNumber>
   }
 }
+*/
